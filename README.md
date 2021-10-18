@@ -127,7 +127,7 @@ createServer( done );
 
 ## Examples
 
-<!-- eslint-disable no-process-exit -->
+<!-- eslint-disable node/no-process-exit -->
 
 <!-- eslint no-undef: "error" -->
 
@@ -170,6 +170,16 @@ createServer( done );
 </section>
 
 <!-- /.examples -->
+
+<!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
+
+<section class="related">
+
+</section>
+
+<!-- /.related -->
+
+<!-- Section for all links. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
 
 <section class="main-repo" >
