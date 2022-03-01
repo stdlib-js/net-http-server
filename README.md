@@ -224,8 +224,8 @@ Copyright &copy; 2016-2022. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/net-http-server.svg
 [npm-url]: https://npmjs.org/package/@stdlib/net-http-server
 
-[test-image]: https://github.com/stdlib-js/net-http-server/actions/workflows/test.yml/badge.svg
-[test-url]: https://github.com/stdlib-js/net-http-server/actions/workflows/test.yml
+[test-image]: https://github.com/stdlib-js/net-http-server/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/net-http-server/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/net-http-server/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/net-http-server?branch=main
