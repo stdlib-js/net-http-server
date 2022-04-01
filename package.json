@@ -1,0 +1,29 @@
+{
+  "name": "@stdlib/net-http-server",
+  "version": "0.0.0",
+  "description": "HTTP server.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./index.mjs",
+  "homepage": "https://stdlib.io",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stdlib-js/net-http-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stdlib-js/stdlib/issues"
+  },
+  "keywords": [
+    "stdlib",
+    "net",
+    "network",
+    "networking",
+    "http",
+    "server",
+    "create"
+  ],
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/athan"
+  }
+}
