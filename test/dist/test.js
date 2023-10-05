@@ -24,7 +24,7 @@ var http = require( 'http' );
 var tape = require( 'tape' );
 var objectKeys = require( '@stdlib/utils-keys' );
 var noop = require( '@stdlib/utils-noop' );
-var createServer = require( './../..xtures/server.js' );
+var createServer = require( './../fixtures/server.js' );
 var httpServer = require( './../../dist' );
 
 
