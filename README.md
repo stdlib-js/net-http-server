@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
+import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.0-esm/index.mjs';
 ```
 
 #### httpServer( \[options,] \[ requestListener] )
@@ -142,7 +142,7 @@ createServer( done );
 
 var proc = require( 'process' );
 var http = require( 'http' );
-import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
+import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.0-esm/index.mjs';
 
 function done( error, server ) {
     if ( error ) {
