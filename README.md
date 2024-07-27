@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/net-http-server/tags). For example,
+
+```javascript
 import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.2-esm/index.mjs';
 ```
 
@@ -142,7 +147,7 @@ createServer( done );
 
 var proc = require( 'process' );
 var http = require( 'http' );
-import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.2-esm/index.mjs';
+import httpServer from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
 
 function done( error, server ) {
     if ( error ) {
