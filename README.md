@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> [HTTP][http] server.
+> [HTTP][nodejs-http] server.
 
 <section class="installation">
 
@@ -60,16 +60,21 @@ To view installation and usage instructions specific to each branch build, be su
 ## Usage
 
 ```javascript
-var httpServer = require( '@stdlib/net-http-server' );
+var httpServerFactory = require( '@stdlib/net-http-server' );
 ```
 
-#### httpServer( \[options,] \[ requestListener] )
+#### httpServerFactory( \[options,] \[ requestListener] )
 
-Returns a function to create an [HTTP][http] server.
+Returns a function to create an [HTTP][nodejs-http] server.
 
 ```javascript
-var createServer = httpServer();
+var httpServer = httpServerFactory();
 ```
+
+The function supports the following parameters:
+
+-   **options**: options.
+-   **requestListener**: callback to invoke upon receiving an HTTP request.
 
 To bind a request callback to a server, provide a `requestListener`.
 
@@ -79,17 +84,17 @@ function requestListener( request, response ) {
     response.end( 'OK' );
 }
 
-var createServer = httpServer( requestListener );
+var httpServer = httpServerFactory( requestListener );
 ```
 
-The function accepts the following `options`:
+The function accepts the following options:
 
 -   **port**: server port. Default: `0` (i.e., randomly assigned).
 -   **maxport**: max server port when port hunting. Default: `maxport=port`.
 -   **hostname**: server hostname.
 -   **address**: server address. Default: `127.0.0.1`.
 
-To specify server options, provide an `options` object.
+To specify server options, provide an options object.
 
 ```javascript
 var opts = {
@@ -97,7 +102,7 @@ var opts = {
     'address': '0.0.0.0'
 };
 
-var createServer = httpServer( opts );
+var httpServer = httpServerFactory( opts );
 ```
 
 To specify a range of permissible ports, set the `maxport` option.
@@ -107,14 +112,14 @@ var opts = {
     'maxport': 9999
 };
 
-var createServer = httpServer( opts );
+var httpServer = httpServerFactory( opts );
 ```
 
 When provided a `maxport` option, a created server will search for the first available `port` on which to listen, starting from `port`.
 
-#### createServer( done )
+#### httpServer( \[options,] done )
 
-Creates an [HTTP][http] server.
+Creates an [HTTP][nodejs-http] server.
 
 ```javascript
 function done( error, server ) {
@@ -125,10 +130,15 @@ function done( error, server ) {
     server.close();
 }
 
-var createServer = httpServer();
+var httpServer = httpServerFactory();
 
-createServer( done );
+httpServer( done );
 ```
+
+The function supports the following parameters:
+
+-   **options**: server options which are passed directly to [`http.createServer`][nodejs-http-create-server]. Which options are supported depends on the Node.js version. Older Node.js versions (e.g., <= v8.12.0) do not support an options object, and, for those versions, a provided options object is ignored.
+-   **done**: callback to invoke once a server is listening and ready to handle requests.
 
 </section>
 
@@ -155,7 +165,7 @@ createServer( done );
 ```javascript
 var proc = require( 'process' );
 var http = require( 'http' );
-var httpServer = require( '@stdlib/net-http-server' );
+var httpServerFactory = require( '@stdlib/net-http-server' );
 
 function done( error, server ) {
     if ( error ) {
@@ -182,10 +192,10 @@ var opts = {
 };
 
 // Create a function for creating an HTTP server...
-var createServer = httpServer( opts, onRequest );
+var httpServer = httpServerFactory( opts, onRequest );
 
 // Create a server:
-createServer( done );
+httpServer( done );
 ```
 
 </section>
@@ -272,7 +282,9 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/net-http-server/main/LICENSE
 
-[http]: https://nodejs.org/api/http.html
+[nodejs-http]: https://nodejs.org/api/http.html
+
+[nodejs-http-create-server]: https://nodejs.org/api/http.html#httpcreateserveroptions-requestlistener
 
 </section>
 

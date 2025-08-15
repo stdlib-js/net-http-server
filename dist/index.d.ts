@@ -1,3 +1,3 @@
 /// <reference path="../docs/types/index.d.ts" />
-import httpServer from '../docs/types/index';
-export = httpServer;
+import factory from '../docs/types/index';
+export = factory;
