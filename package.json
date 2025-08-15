@@ -38,11 +38,11 @@
     "@stdlib/assert-has-own-property": "^0.2.2",
     "@stdlib/assert-is-function": "^0.2.2",
     "@stdlib/assert-is-nonnegative-integer": "^0.2.2",
-    "@stdlib/assert-is-object": "^0.2.2",
     "@stdlib/assert-is-plain-object": "^0.2.2",
     "@stdlib/assert-is-string": "^0.2.2",
     "@stdlib/process-node-version": "^0.2.2",
     "@stdlib/string-format": "^0.2.2",
+    "@stdlib/utils-omit": "^0.2.2",
     "debug": "^2.6.9",
     "@stdlib/error-tools-fmtprodmsg": "^0.2.2"
   },
