@@ -35,14 +35,32 @@ limitations under the License.
 
 > [HTTP][nodejs-http] server.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/net-http-server
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
+var httpServerFactory = require( '@stdlib/net-http-server' );
 ```
 
 #### httpServerFactory( \[options,] \[ requestListener] )
@@ -55,8 +73,8 @@ var httpServer = httpServerFactory();
 
 The function supports the following parameters:
 
--   **options**: options.
--   **requestListener**: callback to invoke upon receiving an HTTP request.
+-   **options**: options (_optional_).
+-   **requestListener**: callback to invoke upon receiving an HTTP request (_optional_).
 
 To bind a request callback to a server, provide a `requestListener`.
 
@@ -69,7 +87,7 @@ function requestListener( request, response ) {
 var httpServer = httpServerFactory( requestListener );
 ```
 
-The function accepts the following options:
+In addition to the options supported by [`http.createServer`][nodejs-http-create-server], the function accepts the following options:
 
 -   **port**: server port. Default: `0` (i.e., randomly assigned).
 -   **maxport**: max server port when port hunting. Default: `maxport=port`.
@@ -99,7 +117,7 @@ var httpServer = httpServerFactory( opts );
 
 When provided a `maxport` option, a created server will search for the first available `port` on which to listen, starting from `port`.
 
-#### httpServer( \[options,] done )
+#### httpServer( done )
 
 Creates an [HTTP][nodejs-http] server.
 
@@ -119,7 +137,6 @@ httpServer( done );
 
 The function supports the following parameters:
 
--   **options**: server options which are passed directly to [`http.createServer`][nodejs-http-create-server]. Which options are supported depends on the Node.js version. Older Node.js versions (e.g., <= v8.12.0) do not support an options object, and, for those versions, a provided options object is ignored.
 -   **done**: callback to invoke once a server is listening and ready to handle requests.
 
 </section>
@@ -130,6 +147,7 @@ The function supports the following parameters:
 
 ## Notes
 
+-   Which server options are supported depends on the Node.js version. Older Node.js versions (e.g., <= v8.12.0) do not support an options object when calling [`http.createServer`][nodejs-http-create-server], and, for those versions, any options specific to Node.js are ignored.
 -   Port hunting can be useful in a microservice deployment. When a `port` is randomly assigned (`options.port=0`), if a server fails and is restarted, the server is unlikely to bind to its previous `port`. By allowing a constrained search, assuming no lower `ports` within a specified range have freed up in the meantime, the likelihood of listening on the same `port` is increased. A server can typically restart and bind to the same `port` faster than binding to a new `port` and re-registering with a microservice registry, thus minimizing possible service interruption and downtime.
 
 </section>
@@ -144,15 +162,10 @@ The function supports the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
+```javascript
 var proc = require( 'process' );
 var http = require( 'http' );
-import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@esm/index.mjs';
+var httpServerFactory = require( '@stdlib/net-http-server' );
 
 function done( error, server ) {
     if ( error ) {
@@ -183,10 +196,6 @@ var httpServer = httpServerFactory( opts, onRequest );
 
 // Create a server:
 httpServer( done );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -210,7 +219,7 @@ httpServer( done );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
