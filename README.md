@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/net-http-server/tags). For example,
+
+```javascript
 import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.3-deno/mod.js';
 ```
 
@@ -147,7 +152,7 @@ The function supports the following parameters:
 ```javascript
 var proc = require( 'process' );
 var http = require( 'http' );
-import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.3-deno/mod.js';
+import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@deno/mod.js';
 
 function done( error, server ) {
     if ( error ) {
