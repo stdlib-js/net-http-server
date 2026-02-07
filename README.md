@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@deno/mod.js';
+import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.4-deno/mod.js';
 ```
 
 #### httpServerFactory( \[options,] \[requestListener] )
@@ -147,7 +147,7 @@ The function supports the following parameters:
 ```javascript
 var proc = require( 'process' );
 var http = require( 'http' );
-import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@deno/mod.js';
+import httpServerFactory from 'https://cdn.jsdelivr.net/gh/stdlib-js/net-http-server@v0.2.4-deno/mod.js';
 
 function done( error, server ) {
     if ( error ) {
